@@ -160,7 +160,9 @@ The strategy performed differently across market environments.
 | 2022 | Inflation shock, rate hikes, Ukraine war          | Rotated into Energy, Defence, and PSU leaders |
 | 2023 | Capex and manufacturing expansion cycle           | Benefited from Industrials, -Retail, and Financials |
 | 2024 | PSU, Defence, Capital Goods, and Retail leadership| Strongest alpha generation period |
+
 | 2025 | More rotational and less trend-persistent market  | Momentum effectiveness weakened |
+
 | 2026* | Partial year                                     | Early results indicate continued resilience |
 
 
