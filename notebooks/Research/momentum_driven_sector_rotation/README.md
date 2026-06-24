@@ -155,15 +155,15 @@ The strategy performed differently across market environments.
 
 | Year | Market Environment                                | Strategy Behavior |
 |------|-------------------                                |-------------------|
-| 2020 | Post-COVID recovery, liquidity-driven rally       | Captured recovery leaders in Auto, ------------------------------------------------------------Metals, and Energy |
-| 2021 | Strong bull market, commodity and industrial boom | Significant alpha from Industrials ------------------------------------------------------------and Metals |
-| 2022 | Inflation shock, rate hikes, Ukraine war          | Rotated into Energy, Defence, and ------------------------------------------------------------PSU leaders |
-| 2023 | Capex and manufacturing expansion cycle           | Benefited from Industrials, -------------------------------------------------------------Retail, and Financials |
+| 2020 | Post-COVID recovery, liquidity-driven rally       | Captured recovery leaders in Auto, Metals, and Energy |
+| 2021 | Strong bull market, commodity and industrial boom | Significant alpha from Industrials and Metals |
+| 2022 | Inflation shock, rate hikes, Ukraine war          | Rotated into Energy, Defence, and PSU leaders |
+| 2023 | Capex and manufacturing expansion cycle           | Benefited from Industrials, -Retail, and Financials |
 | 2024 | PSU, Defence, Capital Goods, and Retail leadership| Strongest alpha generation period |
 
 | 2025 | More rotational and less trend-persistent market  | Momentum effectiveness weakened |
 
-| 2026* | Partial year                                     | Early results indicate continued -----------------------------------------------------------resilience |
+| 2026* | Partial year                                     | Early results indicate continued resilience |
 
 
 ### Key Observation
@@ -189,6 +189,16 @@ The following tests were performed:
 - Portfolio evolution analysis
 
 Top 5 holdings produced the best balance between return, diversification, and risk-adjusted performance.
+
+---
+
+## Limitations
+
+- Universe is limited to NIFTY 50 stocks.
+- Results may be affected by survivorship bias.
+- Strategy uses a fixed 63-day momentum lookback and EMA50 filter, which may not remain optimal in future market regimes.
+- Portfolio is rebalanced quarterly, which may miss faster trend changes.
+- Historical performance does not guarantee future returns.
 
 ---
 
