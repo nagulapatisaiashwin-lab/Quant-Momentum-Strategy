@@ -4,7 +4,7 @@
 
 This project investigates a systematic momentum and trend-following strategy applied to the NIFTY 50 universe.
 
-The strategy ranks stocks based on their 63-day momentum, applies trend filters using the 50-day Exponential Moving Average (EMA), and constructs an equal-weight portfolio of the top 5 eligible stocks. The portfolio is rebalanced every 63 trading days (approximately quarterly).
+The strategy ranks stocks based on their 63-day momentum, applies trend filters using the 50-day Exponential Moving Average (EMA50), and constructs an equal-weight portfolio of the top 5 eligible stocks. The portfolio is rebalanced every 63 trading days (approximately quarterly).
 
 The objective is to determine whether a simple rules-based process can generate excess returns relative to both an equal-weight benchmark and the NIFTY 50 index.
 
@@ -45,16 +45,16 @@ A stock is eligible only if:
 
 ## Performance Summary
 
-| Metric                 | Value , |
-|------------------------|--------:|
-| Strategy Return        | 673.23% |
+| Metric | Value |
+|----------|----------:|
+| Strategy Return | 673.23% |
 | Equal Weight Benchmark | 283.16% |
-| NIFTY 50 Return        | 122.35% |
-| CAGR                   | 41.92%  |
-| Sharpe Ratio           | 1.87    |
-| Max Drawdown           | -16.16% |
-| Annual Turnover        | 345.45% |
-| Average Survivors      | 0.68/5  |
+| NIFTY 50 Return | 122.35% |
+| CAGR | 41.92% |
+| Sharpe Ratio | 1.86 |
+| Max Drawdown | -16.16% |
+| Annual Turnover | 345.45% |
+| Average Survivors | 0.68 / 5 |
 
 ---
 
@@ -67,6 +67,8 @@ A stock is eligible only if:
 ## Drawdown Analysis
 
 ![Drawdown](plots/drawdown.png)
+
+---
 
 ## Rolling CAGR vs Sharpe
 
@@ -95,13 +97,13 @@ This behavior is consistent with momentum investing, where a small number of lar
 
 Top contributing sectors:
 
-| Sector      | Contribution |
-|----------   |----------:|
-| Retail      | 2.86 |
-| Industrials | 2.51 |
-| Metals      | 1.31 |
-| Auto        | 1.11 |
-| Energy      | 0.90 |
+| Sector | Contribution |
+|----------|----------:|
+| Retail | 286% |
+| Industrials | 251% |
+| Metals | 131% |
+| Auto | 111% |
+| Energy | 90% |
 
 Weakest sectors:
 
@@ -113,7 +115,7 @@ Weakest sectors:
 
 ### Portfolio Evolution
 
-The strategy dynamically rotated across market leadership themes:
+The strategy dynamically rotated across market leadership themes.
 
 #### 2020
 
@@ -145,6 +147,17 @@ The strategy dynamically rotated across market leadership themes:
 - Defence
 - Industrials
 
+#### 2025
+
+- Financials
+- Industrials
+- Selective Momentum Leadership
+
+#### 2026*
+
+- Partial Year
+- Continued trend participation
+
 This suggests the strategy acts as an implicit sector-rotation model rather than maintaining fixed sector exposure.
 
 ---
@@ -153,24 +166,25 @@ This suggests the strategy acts as an implicit sector-rotation model rather than
 
 The strategy performed differently across market environments.
 
-| Year | Market Environment                                | Strategy Behavior |
-|------|-------------------                                |-------------------|
-| 2020 | Post-COVID recovery, liquidity-driven rally       | Captured recovery leaders in Auto, Metals, and Energy |
-| 2021 | Strong bull market, commodity and industrial boom | Significant alpha from Industrials and Metals |
-| 2022 | Inflation shock, rate hikes, Ukraine war          | Rotated into Energy, Defence, and PSU leaders |
-| 2023 | Capex and manufacturing expansion cycle           | Benefited from Industrials, -Retail, and Financials |
-| 2024 | PSU, Defence, Capital Goods, and Retail leadership| Strongest alpha generation period |
-| 2025 | More rotational and less trend-persistent market  | Momentum effectiveness weakened |
-| 2026* | Partial year                                     | Early results indicate continued resilience |
-
+| Year | Market Environment | Strategy Behavior |
+|------|-------------------|-------------------|
+| 2020 | Post-COVID recovery, liquidity-driven rally | Captured leaders in Auto, Metals, and Energy |
+| 2021 | Strong bull market and commodity boom | Significant alpha from Industrials and Metals |
+| 2022 | Inflation shock, rate hikes, Ukraine war | Rotated into Energy, Defence, and PSU leaders |
+| 2023 | Capex and manufacturing expansion cycle | Benefited from Industrials, Retail, and Financials |
+| 2024 | PSU, Defence, Capital Goods, Retail leadership | Strongest alpha generation period |
+| 2025 | More rotational and less trend-persistent market | Momentum effectiveness weakened |
+| 2026* | Partial year | Early results indicate continued resilience |
 
 ### Key Observation
 
 The strategy performs best during periods of strong sector leadership and persistent trends.
 
-The strongest years (2021 and 2024) coincided with clear market leadership in sectors such as Industrials, Metals, Retail, Defence, and Energy.
+The strongest years coincided with clear leadership in sectors such as Industrials, Metals, Retail, Defence, and Energy.
 
-Performance weakened during more rotational environments where leadership changed frequently and trends were less persistent.
+Performance weakened during rotational environments where leadership changed frequently and trends were less persistent.
+
+---
 
 ## Visual Strategy Inspection
 
@@ -187,20 +201,18 @@ The dashboards visualize:
 Three representative portfolio selections were analyzed:
 
 - Best Rebalance Period
-- Worst Rebalance Period
 - Median Rebalance Period
+- Worst Rebalance Period
 
-### Key Observations
-
-#### Best Rebalance Period
+### Best Rebalance Period
 
 The strongest portfolio periods typically exhibited:
 
 - Strong positive momentum
 - Price significantly above EMA50
 - Rising EMA50
-- Strong positive EMA slope
-- Emerging market leaders and trend acceleration
+- Positive EMA slope
+- Trend acceleration
 
 Examples included:
 
@@ -210,20 +222,20 @@ Examples included:
 - NTPC
 - ETERNAL
 
-#### Worst Rebalance Period
+### Worst Rebalance Period
 
 The weakest portfolio periods often occurred when:
 
-- Momentum leadership was weak across the universe
-- Stocks exhibited flattening trends
+- Momentum leadership was weak
+- Trends were flattening
 - EMA slope was deteriorating
-- Few strong trend-following opportunities existed
+- Few attractive opportunities existed
 
-This suggests strategy performance is highly dependent on the availability of strong momentum leaders.
+This suggests strategy performance depends heavily on the availability of strong momentum leaders.
 
 ### Research Insight
 
-Visual analysis revealed that the strategy is not a bottom-fishing system.
+Visual inspection revealed that the strategy is not a bottom-fishing system.
 
 Instead, it primarily identifies:
 
@@ -232,6 +244,25 @@ Instead, it primarily identifies:
 - Emerging market leaders
 
 after trend confirmation has already occurred.
+
+---
+
+## Research Contribution
+
+This project demonstrates a complete quantitative research workflow:
+
+- Hypothesis formulation
+- Signal construction
+- Backtesting
+- Performance attribution
+- Sector analysis
+- Turnover analysis
+- Robustness testing
+- Interactive trade inspection
+
+The objective was not only to build a profitable strategy, but also to understand why it works and when it fails.
+
+---
 
 ## Robustness Checks
 
@@ -256,20 +287,58 @@ Top 5 holdings produced the best balance between:
 - Risk-adjusted performance
 
 The strategy remained robust across multiple market environments while maintaining reasonable drawdown characteristics.
+
+---
+
+## Reproducibility
+
+To ensure consistent results, the final version of this project uses locally saved historical datasets.
+
+This avoids:
+
+- Yahoo Finance download failures
+- Historical data revisions
+- Missing ticker downloads
+- API inconsistencies
+
+All reported performance metrics were generated using the datasets included in this repository.
+
+---
+
+## Research Artifacts
+
+### Static Reports
+
+- Equity Curve
+- Drawdown Analysis
+- Rolling CAGR vs Sharpe
+- Yearly Returns
+
+### Interactive Reports
+
+- Best Rebalance Inspection
+- Median Rebalance Inspection
+- Worst Rebalance Inspection
+
+These dashboards provide stock-level visual inspection of portfolio selections and help explain strategy performance beyond aggregate statistics.
+
 ---
 
 ## Limitations
 
 - Universe is limited to NIFTY 50 stocks.
 - Results may be affected by survivorship bias.
-- Strategy uses a fixed 63-day momentum lookback and EMA50 filter, which may not remain optimal in future market regimes.
-- Portfolio is rebalanced quarterly, which may miss faster trend changes.
+- Historical index constituent changes are not incorporated.
+- Strategy uses a fixed 63-day momentum lookback and EMA50 filter.
+- Portfolio is rebalanced quarterly and may miss faster trend changes.
+- Transaction costs are simplified.
 - Historical performance does not guarantee future returns.
 
 ---
 
 ## Project Structure
 
+```text
 momentum_driven_sector_rotation/
 
 ├── momentum_driven_sector_rotation.ipynb
@@ -285,19 +354,16 @@ momentum_driven_sector_rotation/
 │   └── worst_rebalance_inspection.html
 
 └── results/
+    ├── price_data_v1.csv
+    ├── nifty50_data.csv
     ├── summary_metrics.csv
     ├── yearly_performance.csv
     ├── top_contributors.csv
     ├── sector_contributions.csv
-    ├── portfolio_history.csvv
+    └── portfolio_history.csv
 ```
 
 ---
-
----
-
-# Updated Conclusion
-
 
 ## Conclusion
 
