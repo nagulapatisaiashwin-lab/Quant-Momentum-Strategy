@@ -160,9 +160,7 @@ The strategy performed differently across market environments.
 | 2022 | Inflation shock, rate hikes, Ukraine war          | Rotated into Energy, Defence, and PSU leaders |
 | 2023 | Capex and manufacturing expansion cycle           | Benefited from Industrials, -Retail, and Financials |
 | 2024 | PSU, Defence, Capital Goods, and Retail leadership| Strongest alpha generation period |
-
 | 2025 | More rotational and less trend-persistent market  | Momentum effectiveness weakened |
-
 | 2026* | Partial year                                     | Early results indicate continued resilience |
 
 
@@ -174,22 +172,90 @@ The strongest years (2021 and 2024) coincided with clear market leadership in se
 
 Performance weakened during more rotational environments where leadership changed frequently and trends were less persistent.
 
+## Visual Strategy Inspection
+
+To better understand portfolio behavior beyond aggregate performance metrics, interactive Plotly dashboards were created for selected rebalance periods.
+
+The dashboards visualize:
+
+- Stock Price
+- EMA50 Trend Filter
+- EMA50 Slope
+- Rebalance Date
+- Momentum Score
+
+Three representative portfolio selections were analyzed:
+
+- Best Rebalance Period
+- Worst Rebalance Period
+- Median Rebalance Period
+
+### Key Observations
+
+#### Best Rebalance Period
+
+The strongest portfolio periods typically exhibited:
+
+- Strong positive momentum
+- Price significantly above EMA50
+- Rising EMA50
+- Strong positive EMA slope
+- Emerging market leaders and trend acceleration
+
+Examples included:
+
+- TRENT
+- COALINDIA
+- LT
+- NTPC
+- ETERNAL
+
+#### Worst Rebalance Period
+
+The weakest portfolio periods often occurred when:
+
+- Momentum leadership was weak across the universe
+- Stocks exhibited flattening trends
+- EMA slope was deteriorating
+- Few strong trend-following opportunities existed
+
+This suggests strategy performance is highly dependent on the availability of strong momentum leaders.
+
+### Research Insight
+
+Visual analysis revealed that the strategy is not a bottom-fishing system.
+
+Instead, it primarily identifies:
+
+- Established uptrends
+- Trend acceleration phases
+- Emerging market leaders
+
+after trend confirmation has already occurred.
+
 ## Robustness Checks
 
 The following tests were performed:
 
 - Look-ahead bias removal
 - Transaction cost inclusion
-- Top 3 / Top 5 / Top 7 portfolio tests
+- Top 3 / Top 5 / Top 7 portfolio comparison
 - NIFTY 50 benchmark comparison
-- NIFTY 100 universe test
+- NIFTY 100 universe comparison
 - Turnover analysis
 - Contribution analysis
 - Sector attribution analysis
 - Portfolio evolution analysis
+- Best / Worst / Median rebalance inspection
+- Interactive chart-based validation
 
-Top 5 holdings produced the best balance between return, diversification, and risk-adjusted performance.
+Top 5 holdings produced the best balance between:
 
+- Return
+- Diversification
+- Risk-adjusted performance
+
+The strategy remained robust across multiple market environments while maintaining reasonable drawdown characteristics.
 ---
 
 ## Limitations
@@ -204,7 +270,6 @@ Top 5 holdings produced the best balance between return, diversification, and ri
 
 ## Project Structure
 
-```text
 momentum_driven_sector_rotation/
 
 ├── momentum_driven_sector_rotation.ipynb
@@ -214,35 +279,48 @@ momentum_driven_sector_rotation/
 │   ├── equity_curve.png
 │   ├── drawdown.png
 │   ├── yearly_returns.png
-│   └── rolling_cagr_vs_sharpe.png
+│   ├── rolling_cagr_vs_sharpe.png
+│   ├── best_rebalance_inspection.html
+│   ├── median_rebalance_inspection.html
+│   └── worst_rebalance_inspection.html
 
 └── results/
     ├── summary_metrics.csv
     ├── yearly_performance.csv
     ├── top_contributors.csv
     ├── sector_contributions.csv
-    ├── portfolio_history.csv
-    └── latest_portfolio.csv
+    ├── portfolio_history.csvv
 ```
 
 ---
 
+---
+
+# Updated Conclusion
+
+
 ## Conclusion
 
-A momentum and trend-following strategy was developed and tested on the NIFTY 50 universe.
+A systematic momentum and trend-following strategy was developed and tested on the NIFTY 50 universe.
 
 The strategy combines:
 
-- 63-day momentum
-- EMA50 trend confirmation
-- Positive EMA slope
-- Quarterly rebalancing
-- Equal-weight portfolio construction
+- 63-day Momentum
+- EMA50 Trend Confirmation
+- Positive EMA50 Slope
+- Quarterly Rebalancing
+- Equal-Weight Portfolio Construction
 
+Results demonstrated substantial outperformance relative to both the NIFTY 50 Index and an Equal-Weight Benchmark.
 
+Key findings include:
 
-while significantly outperforming both the equal-weight benchmark and the NIFTY 50 index.
+- Momentum leadership is a major source of alpha.
+- Strong trends tend to persist once confirmed.
+- Sector leadership rotates dynamically over time.
+- Trend confirmation improves risk-adjusted performance.
+- The strongest portfolio periods coincide with broad momentum participation across the market.
 
-Further analysis revealed that alpha was generated primarily through systematic identification of sector leaders in Retail, Industrials, Metals, Auto, and Energy. The portfolio dynamically rotated between market leadership themes rather than maintaining fixed sector exposures.
+Visual inspection further showed that the strategy primarily captures established trends and trend acceleration rather than attempting to predict market bottoms.
 
-The results suggest that momentum combined with trend confirmation can be an effective and economically intuitive source of alpha in Indian equities.
+Overall, the results suggest that momentum combined with trend confirmation can serve as an effective, intuitive, and economically grounded source of alpha in Indian equities.
