@@ -105,18 +105,17 @@ Signal = Morning Return / 20-Day Volatility
 
 0.05%
 
-### Performance
-
 | Metric | Value |
 |----------|----------:|
 | Trades | 169 |
-| Total Return | 29.27% |
-| CAGR | 2.51% |
-| Sharpe | 0.73 |
-| Profit Factor | 1.75 |
-| Win Rate | 57.4% |
-| Max Drawdown | -4.80% |
-| Average Trade | 0.16% |
+| Total Return | 40.64% |
+| CAGR | 3.34% |
+| Sharpe | 0.96 |
+| Profit Factor | 2.10 |
+| Win Rate | 62.13% |
+| Max Drawdown | -4.12% |
+
+Sharpe ratio is annualized using the average number of trades per year.
 
 ---
 
@@ -132,9 +131,10 @@ Performance deteriorated significantly after 2023.
 
 ---
 
-# Most Important Discovery
+# Strategy Decay & Market Efficiency
 
-The strategy weakened because the underlying predictive relationship weakened.
+The strategy weakened because the predictive relationship between morning and afternoon returns deteriorated over time.
+
 
 ### Morning vs Afternoon Correlation
 

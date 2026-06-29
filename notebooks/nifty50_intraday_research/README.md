@@ -341,9 +341,10 @@ The signal survives overnight but weakens during the following trading session.
 
 ### Signal
 
-```text
+
 Signal = Morning Return / 20-Day Volatility
-```
+
+![Volatility Adjusted Momentum Strategy](results/strategy_equity_curve.png)
 
 ### Entry
 
@@ -365,19 +366,20 @@ At 11:00
 | Metric | Value |
 |----------|----------:|
 | Trades | 169 |
-| Total Return | 29.27% |
-| CAGR | 2.51% |
-| Sharpe | 0.73 |
-| Profit Factor | 1.75 |
-| Win Rate | 57.4% |
-| Max Drawdown | -4.80% |
-| Average Trade | 0.16% |
+| Total Return | 40.64% |
+| CAGR | 3.34% |
+| Sharpe | 0.96 |
+| Profit Factor | 2.10 |
+| Win Rate | 62.13% |
+| Max Drawdown | -4.12% |
+
+Sharpe ratio is annualized using the average number of trades per year.
 
 This was the strongest intraday strategy discovered during the research process.
 
 ---
 
-# Most Important Discovery
+# Strategy Decay & Market Efficiency
 
 The strongest finding of the entire project was not a trading strategy.
 
@@ -403,7 +405,7 @@ This suggests that the predictive relationship itself weakened over time.
 
 The strategy did not fail because of implementation.
 
-The strategy weakened because the market became less predictable.
+The strategy weakened because the predictive relationship between morning and afternoon returns deteriorated over time.
 
 ---
 
