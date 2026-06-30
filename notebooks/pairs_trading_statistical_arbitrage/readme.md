@@ -29,7 +29,6 @@ The project evolves through seven stages:
 
 # Research Methodology
 
-
 ## 02. Pair Discovery
 
 ### Objective
@@ -209,7 +208,7 @@ Static Standard Deviation
 
 This version uses:
 
-
+```text
 252-Day Rolling Beta
 252-Day Rolling Mean
 252-Day Rolling Standard Deviation
@@ -217,7 +216,7 @@ This version uses:
 
 Signals are generated using only historical information available at the time.
 
-# Results
+### Results
 
 | Metric | Value |
 |----------|----------|
@@ -234,7 +233,7 @@ Performance deteriorated significantly once future information was removed.
 
 A substantial portion of the apparent edge observed in earlier versions was driven by static parameter estimation and look-ahead effects.
 
-
+---
 
 ## 07. Dynamic Pair Selection
 
@@ -323,6 +322,13 @@ Signals generated today are executed on the next trading day.
 
 ---
 
+| Stage             |   CAGR | Sharpe |
+| ----------------- | -----: | -----: |
+| Out-of-Sample     | 65.08% |   2.39 |
+| Walk-Forward      |  9.24% |   0.58 |
+| Dynamic Selection |  7.08% |   0.41 |
+
+
 # Final Conclusion
 
 Initial experiments suggested a highly profitable statistical arbitrage strategy. However, progressively removing assumptions and reducing look-ahead bias resulted in a substantial decline in performance.
@@ -343,7 +349,7 @@ The project therefore serves both as a statistical arbitrage study and as an ill
 
 # Project Structure
 
-
+```text
 pairs_trading_statistical_arbitrage/
 
 │

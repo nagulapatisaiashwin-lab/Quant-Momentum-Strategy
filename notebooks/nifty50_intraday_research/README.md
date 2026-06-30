@@ -8,6 +8,7 @@ Rather than optimizing a single strategy, the objective was to study how informa
 
 The research followed a quantitative workflow:
 
+```text
 Hypothesis
     ↓
 Backtest
@@ -159,11 +160,13 @@ Do morning returns predict afternoon returns?
 
 Strong morning moves tended to continue into the afternoon.
 
+```text
 Weak Morning Move
 → Weak Afternoon Move
 
 Strong Morning Move
 → Strong Afternoon Move
+```
 
 ### Verdict
 
@@ -238,9 +241,9 @@ Signal = Return
 
 Use:
 
-
+```text
 Signal = Return / Volatility
-
+```
 
 ### Finding
 
@@ -341,8 +344,9 @@ The signal survives overnight but weakens during the following trading session.
 
 ### Signal
 
-
+```text
 Signal = Morning Return / 20-Day Volatility
+```
 
 ![Volatility Adjusted Momentum Strategy](results/strategy_equity_curve.png)
 
@@ -455,7 +459,7 @@ The momentum edge appears to have been largely arbitraged away.
 
 # Rejected Ideas
 
-The following concepts failed to demonstrate robust performance:
+The following concepts failed to demonstrate robust performance.
 
 ### EMA Trend Following
 
@@ -493,8 +497,7 @@ Combining two individually promising ideas reduced overall performance.
 
 ---
 
-
-## Possible Causes of Strategy Decay
+# Possible Causes of Strategy Decay
 
 The decline in predictive power after 2023 cannot be explained solely by parameter selection or implementation choices.
 
@@ -510,6 +513,8 @@ Several structural explanations are plausible:
 Each of these factors could accelerate the incorporation of information into prices, reducing the persistence of intraday momentum effects.
 
 While the exact cause cannot be identified from this dataset alone, the evidence suggests that the market became progressively more efficient over time.
+
+---
 
 # Related Project
 
@@ -541,8 +546,6 @@ The strongest strategy discovered was Volatility-Adjusted Morning Momentum.
 However, the most important finding was not the strategy itself.
 
 The most important finding was that the underlying relationship between morning and afternoon returns weakened substantially after 2023.
-
-This highlights an important lesson in quantitative research:
 
 > Finding an edge is not enough. Understanding how and why an edge decays is equally important.
 

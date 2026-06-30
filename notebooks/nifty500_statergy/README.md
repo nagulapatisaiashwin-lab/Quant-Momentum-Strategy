@@ -8,42 +8,43 @@ A quantitative research project exploring factor investing, momentum strategies,
 
 This project follows a complete quantitative research workflow:
 
+```text
 Data Collection
-    ↓
+      ↓
 Factor Discovery
-    ↓
-IC Analysis
-    ↓
+      ↓
+Information Coefficient (IC) Analysis
+      ↓
 Portfolio Construction
-    ↓
+      ↓
 Portfolio Optimization
-    ↓
+      ↓
 Transaction Cost Analysis
-    ↓
+      ↓
 Market Regime Analysis
-    ↓
+      ↓
 Volatility Regime Analysis
-    ↓
+      ↓
 Factor Timing
-    ↓
-Dynamic Allocation
+      ↓
+Dynamic Capital Allocation
+```
 
+**Universe:** NIFTY 500
 
-Universe: **NIFTY500**
+**Period:** 2015–2025
 
-Period: **2015–2025**
-
-Frequency: **Daily**
+**Frequency:** Daily
 
 ---
 
-# Key Research Finding
+# Primary Research Finding
 
-The strongest result was not the momentum factor itself.
+The most important finding of this research was not the momentum factor itself.
 
 A **Factor Strength** signal was developed:
 
-
+```text
 Factor Strength
 =
 Mean(Top 20 Momentum Scores)
@@ -51,37 +52,41 @@ Mean(Top 20 Momentum Scores)
 Mean(Bottom 20 Momentum Scores)
 ```
 
-This signal was used to dynamically adjust portfolio exposure.
+This signal measures the strength of the momentum factor across the market and was used to dynamically adjust portfolio exposure.
 
-The research shows that capital allocation based on factor conditions can materially improve performance without materially increasing average portfolio leverage.
+The results suggest that capital allocation based on factor conditions can materially improve performance while maintaining reasonable portfolio risk.
 
 ---
 
 # Strategy Evolution
 
-## Baseline Strategy
+## Baseline Momentum Strategy
+
+### Portfolio Rules
 
 - Factor: Momentum126
-- Portfolio: Top 20 Stocks
-- Equal Weight
+- Portfolio Size: Top 20 Stocks
+- Equal Weight Allocation
 - Rebalance Every 42 Trading Days
 - Transaction Cost: 0.10%
 
-Result:
+### Performance
 
 | Metric | Value |
 |----------|----------:|
 | CAGR | 40.39% |
-| Sharpe | 1.38 |
+| Sharpe Ratio | 1.38 |
 | Max Drawdown | -28.45% |
 
 ---
 
-# Dynamic Allocation Variants
+# Dynamic Capital Allocation Models
 
-Instead of a single "best" model, multiple allocation profiles were evaluated.
+Rather than maintaining constant portfolio exposure, portfolio weights were dynamically adjusted based on Factor Strength.
 
-| Strategy | Exposure Range | CAGR | Sharpe | MaxDD |
+## Results
+
+| Strategy | Exposure Range | CAGR | Sharpe | Max Drawdown |
 |----------|----------|----------:|----------:|----------:|
 | Baseline | 1.00x | 40.39% | 1.38 | -28.45% |
 | Conservative | 0.75x → 1.25x | 43.19% | 1.38 | -30.33% |
@@ -90,32 +95,32 @@ Instead of a single "best" model, multiple allocation profiles were evaluated.
 
 ### Interpretation
 
-**Conservative**
+#### Conservative Allocation
 
-- Highest Sharpe Ratio
-- Smallest increase in drawdown
-- Most stable implementation
+- Highest risk-adjusted performance
+- Minimal increase in drawdown
+- Most practical implementation
 
-**Balanced**
+#### Balanced Allocation
 
-- Strong CAGR improvement
+- Significant CAGR improvement
 - Moderate drawdown increase
-- Best risk-return compromise
+- Strong overall risk-return tradeoff
 
-**Aggressive**
+#### Aggressive Allocation
 
-- Highest CAGR
-- Highest Profit Factor
-- Largest drawdown
-- Suitable for growth-oriented investors
+- Highest absolute return
+- Highest growth potential
+- Largest drawdowns
+- Suitable only for investors with high risk tolerance
 
 ---
 
-## Allocation Variant Comparison
+## Allocation Model Comparison
 
-[Allocation Variants](results/plots/08_allocation_variants.png)
+![Allocation Variants](results/plots/08_allocation_variants.png)
 
-This figure illustrates how progressively wider exposure ranges improve CAGR while increasing portfolio volatility and drawdown.
+Wider exposure ranges improved returns but increased volatility and drawdown.
 
 ---
 
@@ -123,9 +128,9 @@ This figure illustrates how progressively wider exposure ranges improve CAGR whi
 
 ![Exposure Profiles](results/plots/08_exposure_profiles.png)
 
-Exposure is determined by Factor Strength and varies through time according to market conditions.
+Portfolio exposure varies through time according to Factor Strength.
 
-Average exposure remained close to 1x across all tested variants.
+Despite large changes in exposure limits, average exposure remained close to 1.0x throughout the sample period.
 
 ---
 
@@ -133,25 +138,23 @@ Average exposure remained close to 1x across all tested variants.
 
 ![Exposure vs Factor Strength](results/plots/08_exposure_vs_factor_strength.png)
 
-Exposure increases monotonically with Factor Strength.
-
-This confirms that capital allocation responds systematically to factor conditions.
+Exposure increases monotonically with Factor Strength, confirming that capital allocation responds systematically to market factor conditions.
 
 ---
 
-# Momentum Strategy vs Benchmark
+# Baseline Momentum Strategy Performance
 
 ![Strategy vs Benchmark](results/plots/03_strategy_vs_benchmark.png)
 
-Baseline Momentum126 strategy before dynamic allocation.
+Performance of the Momentum126 strategy prior to dynamic allocation enhancements.
 
 ---
 
 # Factor Discovery
 
-Multiple candidate factors were constructed and evaluated.
+A broad factor universe was constructed and evaluated using cross-sectional Information Coefficient (IC) analysis.
 
-## Factors Tested
+## Factors Evaluated
 
 - Momentum63
 - Momentum126
@@ -161,7 +164,7 @@ Multiple candidate factors were constructed and evaluated.
 - Volatility
 - Volume Trend
 
-### Mean IC Results
+### Mean Information Coefficient (IC)
 
 | Factor | Mean IC |
 |----------|----------:|
@@ -175,20 +178,20 @@ Multiple candidate factors were constructed and evaluated.
 
 ### Key Finding
 
-Momentum126 emerged as the strongest and most consistent factor.
+Momentum126 demonstrated the strongest and most consistent predictive power and was selected as the primary ranking factor.
 
 ---
 
 # Portfolio Construction
 
-Portfolio Rules:
+## Portfolio Rules
 
 - Rank stocks using Momentum126
 - Select Top 20 Stocks
 - Equal Weight Allocation
-- 42-Day Rebalancing
+- Rebalance Every 42 Trading Days
 
-### Portfolio Size Analysis
+### Portfolio Concentration Analysis
 
 | Portfolio Size | Top-Bottom Spread |
 |----------|----------:|
@@ -200,28 +203,29 @@ Portfolio Rules:
 
 ### Key Finding
 
-Top 20 provided the best balance between return and diversification.
+A portfolio size of 20 stocks provided the best balance between alpha generation and diversification.
 
+---
 
-# Rebalance Frequency Analysis
+# Rebalancing Frequency Analysis
 
-Rebalancing frequencies tested:
+The following rebalancing schedules were tested:
 
-- 21 Days
-- 42 Days
-- 63 Days
-- 126 Days
+- 21 Trading Days
+- 42 Trading Days
+- 63 Trading Days
+- 126 Trading Days
 
 | Frequency | CAGR | Sharpe |
 |----------|----------:|----------:|
-| 21D | 40.10% | 1.40 |
-| 42D | 40.79% | 1.39 |
-| 63D | 37.21% | 1.17 |
-| 126D | 36.01% | 1.14 |
+| 21 Days | 40.10% | 1.40 |
+| 42 Days | 40.79% | 1.39 |
+| 63 Days | 37.21% | 1.17 |
+| 126 Days | 36.01% | 1.14 |
 
 ### Key Finding
 
-42-Day Rebalancing delivered the strongest overall performance.
+A 42-day rebalancing frequency delivered the strongest overall performance while maintaining efficient turnover.
 
 ---
 
@@ -234,36 +238,38 @@ Transaction costs tested:
 - 0.25%
 - 0.50%
 
-Average Portfolio Turnover:
+### Average Portfolio Turnover
 
-
+```text
 54.4%
 ```
 
 ### Key Finding
 
-The strategy remained robust under realistic transaction cost assumptions.
+The strategy remained profitable and robust under realistic transaction cost assumptions.
 
 ---
 
 # Market Regime Analysis
 
-Momentum performance was analyzed across:
+Momentum performance was evaluated across different market environments.
+
+### Regimes Tested
 
 - Bull Markets
 - Bear Markets
 
 ### Key Finding
 
-Momentum remained effective in both environments.
+Momentum remained effective across both market regimes.
 
-Restricting trading to bull markets reduced performance.
+Restricting the strategy exclusively to bull markets reduced overall performance.
 
 ---
 
 # Volatility Regime Analysis
 
-Market volatility was classified into:
+Market conditions were classified into:
 
 - Low Volatility
 - Medium Volatility
@@ -271,33 +277,33 @@ Market volatility was classified into:
 
 ### Key Finding
 
-High-volatility periods exhibited stronger momentum returns.
+Momentum returns were strongest during high-volatility periods.
 
-However, filtering trades using volatility regimes reduced overall performance.
+However, explicitly filtering trades using volatility regimes reduced total strategy performance.
 
 ---
 
 # Factor Timing Research
 
-This notebook contains the primary contribution of the project.
+This notebook represents the primary contribution of the project.
 
-### Research Question
+## Research Question
 
 Can factor strength predict future momentum performance?
 
 ### Findings
 
-- Positive correlation between Factor Strength and future returns
-- Stronger factor environments generated higher future momentum profits
-- Dynamic allocation improved portfolio performance
+- Positive relationship between Factor Strength and future returns
+- Stronger factor environments generated larger momentum profits
+- Dynamic allocation improved long-term performance
 
 ### Conclusion
 
-Factor Strength contains useful predictive information and can be used as a dynamic capital allocation signal.
+Factor Strength contains predictive information and can be used as a dynamic portfolio allocation signal.
 
 ---
 
-# Market Extremes Research
+# Market Stretch Analysis
 
 Market Stretch was defined as:
 
@@ -309,58 +315,53 @@ Market Index / MA252 - 1
 
 ### Findings
 
-- Correlation: -0.1587
-- Oversold markets generated stronger future returns
-- Evidence of mean reversion observed
+| Metric | Value |
+|----------|----------:|
+| Correlation | -0.1587 |
 
-However, incorporating Market Stretch into the allocation framework did not improve momentum performance.
+Key observations:
+
+- Oversold markets generated stronger subsequent returns
+- Evidence of mean reversion was observed
+- Timing signals based on market stretch did not improve momentum performance
 
 ---
 
-# Combined Allocation Model
+# Combined Timing Framework
 
-Combined:
+The final experiment combined:
 
 - Factor Strength Timing
 - Market Stretch Timing
 
 ### Result
 
-The combined model underperformed pure Factor Strength Allocation.
+The combined model underperformed the pure Factor Strength allocation framework.
 
-Final allocation framework therefore uses Factor Strength only.
-
----
-
-# Repository Structure
-
-```text
-nifty500_strategy/
-
-├── data/
-│
-├── notebooks/
-│   ├── 01_DATA_COLLECTION.ipynb
-│   ├── 02_FACTOR_ZOO.ipynb
-│   ├── 03_PORTFOLIO_CONSTRUCTION.ipynb
-│   ├── 04_REBALANCE_FREQUENCY_ANALYSIS.ipynb
-│   ├── 05_TRANSACTION_COSTS_AND_TURNOVER.ipynb
-│   ├── 06_MARKET_REGIME_ANALYSIS.ipynb
-│   ├── 07_VOLATILITY_REGIME_ANALYSIS.ipynb
-│   ├── [MAIN]_08_FACTOR_TIMING_RESEARCH.ipynb
-│   ├── 09_MARKET_EXTREMES_RESEARCH.ipynb
-│   └── 10_COMBINED_ALLOCATION_MODEL.ipynb
-│
-├── results/
-│   ├── plots/
-│   └── tables/
-│
-└── README.md
-```
+As a result, the final strategy uses only the Factor Strength signal for dynamic capital allocation.
 
 ---
 
+# Research Summary
+
+### Core Findings
+
+1. Momentum126 was the strongest factor within the tested factor universe.
+2. A Top-20 portfolio produced the best diversification-return tradeoff.
+3. A 42-day rebalance frequency delivered optimal performance.
+4. The strategy remained robust under realistic transaction costs.
+5. Momentum performed well across market and volatility regimes.
+6. Factor Strength successfully predicted future momentum performance.
+7. Dynamic capital allocation improved returns relative to static exposure.
+8. Market Stretch exhibited mean reversion characteristics but did not improve allocation decisions.
+9. Factor Strength was the most effective timing signal discovered during the research process.
+
+---
 
 ## Disclaimer
 
-This project is intended for educational and research purposes only and does not constitute investment advice.
+This project is intended solely for educational and research purposes.
+
+Nothing contained in this repository should be interpreted as financial, investment, or trading advice. Past performance does not guarantee future results.
+
+
