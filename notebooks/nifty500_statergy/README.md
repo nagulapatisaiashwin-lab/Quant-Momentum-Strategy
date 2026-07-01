@@ -84,16 +84,54 @@ The results suggest that capital allocation based on factor conditions can mater
 
 Rather than maintaining constant portfolio exposure, portfolio weights were dynamically adjusted based on Factor Strength.
 
-## Results
+### Key Finding
 
-| Strategy | Exposure Range | CAGR | Sharpe | Max Drawdown |
-|----------|----------|----------:|----------:|----------:|
-| Baseline | 1.00x | 40.39% | 1.38 | -28.45% |
-| Conservative | 0.75x → 1.25x | 43.19% | 1.38 | -30.33% |
-| Balanced | 0.50x → 1.50x | 45.82% | 1.36 | -32.35% |
-| Aggressive | 0.00x → 2.00x | 50.55% | 1.29 | -36.76% |
+Factor Strength successfully identified favorable and unfavorable momentum environments.
+
+Expanding the allowable exposure range produced a consistent increase in CAGR:
+
+| Strategy | Exposure Range | Total Return | CAGR | Sharpe | Max Drawdown | Win Rate | Profit Factor |
+|----------|----------|----------:|----------:|----------:|----------:|----------:|----------:|
+| Baseline | 1.00x | 37.71% | 43.09% | 1.38 | -28.45% | 72.13% | 4.02 |
+| Conservative | 0.75x → 1.25x | 46.90% | 46.11% | 1.38 | -30.33% | 72.13% | 4.26 |
+| Balanced | 0.50x → 1.50x | 57.29% | 48.95% | 1.36 | -32.35% | 72.13% | 4.52 |
+| Growth | 0.25x → 1.75x | 68.79% | 51.60% | 1.33 | -34.50% | 72.13% | 4.78 |
+| Aggressive | 0.00x → 2.00x | 81.24% | 54.06% | 1.29 | -36.76% | 72.13% | 5.04 |
 
 ### Interpretation
+
+**Baseline**
+
+- Constant 1.0x exposure
+- Serves as benchmark for timing models
+
+**Conservative**
+
+- Highest Sharpe Ratio
+- Small increase in drawdown
+- Most practical implementation
+
+**Balanced**
+
+- Strong CAGR improvement
+- Moderate drawdown increase
+- Attractive risk-return tradeoff
+
+**Growth**
+
+- Significant increase in total return
+- Moderate deterioration in risk-adjusted performance
+
+**Aggressive**
+
+- Highest CAGR and Total Return
+- Highest Profit Factor
+- Largest drawdown
+- Best suited for investors prioritizing growth over risk control
+
+The Sharpe ratio remained relatively stable while returns increased, suggesting that Factor Strength contains useful information about future momentum profitability and can be used as a dynamic capital allocation signal.
+
+
 
 #### Conservative Allocation
 
@@ -238,11 +276,6 @@ Transaction costs tested:
 - 0.25%
 - 0.50%
 
-### Average Portfolio Turnover
-
-```text
-54.4%
-```
 
 ### Key Finding
 
