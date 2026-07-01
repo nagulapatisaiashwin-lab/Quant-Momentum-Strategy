@@ -279,6 +279,9 @@ The following tests were performed:
 - Portfolio evolution analysis
 - Best / Worst / Median rebalance inspection
 - Interactive chart-based validation
+- Adaptive volatility overlay
+- Dynamic exposure management
+- Market regime classification
 
 Top 5 holdings produced the best balance between:
 
@@ -323,6 +326,109 @@ All reported performance metrics were generated using the datasets included in t
 These dashboards provide stock-level visual inspection of portfolio selections and help explain strategy performance beyond aggregate statistics.
 
 ---
+
+# Adaptive Risk Overlay Extension
+
+## Motivation
+
+While the baseline momentum strategy delivered strong absolute returns, it remained fully invested regardless of market conditions. An additional research phase investigated whether portfolio exposure could be adjusted dynamically based on market risk conditions to improve capital preservation.
+
+The objective was to determine whether volatility-aware exposure management could reduce drawdowns without significantly damaging long-term performance.
+
+---
+
+## Overlay Design
+
+The underlying stock-selection process remained unchanged:
+
+- NIFTY 50 Universe
+- 63-Day Momentum Signal
+- EMA50 Trend Filter
+- Top 5 Portfolio Construction
+- Quarterly Rebalancing
+
+Only portfolio exposure was modified.
+
+### Exposure Levels
+
+| Exposure | Interpretation |
+|----------|----------|
+| 0% | Extreme Risk Environment |
+| 40% | Elevated Risk Environment |
+| 80% | Neutral Environment |
+| 100% | Favorable Environment |
+
+Portfolio exposure was determined using market volatility and trend-based regime classification.
+
+---
+
+## Results
+
+| Metric | Baseline Momentum | Adaptive Overlay |
+|----------|----------:|----------:|
+| Total Return | 673.23% | 472.97% |
+| CAGR | 41.92% | 34.78% |
+| Sharpe Ratio | 1.86 | 1.89 |
+| Max Drawdown | -16.16% | -4.00% |
+
+### Exposure Statistics
+
+| Metric | Value |
+|----------|----------:|
+| Average Exposure | 79.17% |
+| Time In Cash | 4.17% |
+| Time Fully Invested | 29.17% |
+
+Exposure Distribution:
+
+- 0.0 Exposure : 1 Period
+- 0.4 Exposure : 2 Periods
+- 0.8 Exposure : 14 Periods
+- 1.0 Exposure : 7 Periods
+
+---
+
+## Key Findings
+
+### Significant Drawdown Reduction
+
+The adaptive overlay reduced maximum drawdown from:
+
+```text
+-16.16%
+to
+-4.00%
+```
+
+representing a substantial improvement in downside protection.
+
+### Improved Risk-Adjusted Performance
+
+Although returns decreased, the Sharpe ratio improved slightly:
+
+```text
+1.86 → 1.89
+```
+
+indicating better portfolio efficiency.
+
+### Return vs Risk Trade-Off
+
+The overlay sacrificed a portion of total return in exchange for significantly smoother portfolio behavior and superior capital preservation.
+
+This highlights an important portfolio construction principle:
+
+> Improving risk-adjusted performance does not necessarily require improving stock selection. Exposure management alone can materially alter portfolio outcomes.
+
+---
+
+## Research Conclusion
+
+The baseline momentum strategy remained the highest-return implementation and is the preferred choice for maximizing long-term growth.
+
+However, the adaptive overlay demonstrated that volatility-aware exposure management can dramatically reduce drawdowns while maintaining comparable risk-adjusted performance.
+
+This suggests that momentum alpha is robust, and portfolio outcomes can be further improved through systematic risk management overlays.
 
 ## Limitations
 
